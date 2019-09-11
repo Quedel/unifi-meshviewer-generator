@@ -1,8 +1,8 @@
-## UniFi Meshviewer Generator
+## UniFi Meshviewer/HopGlass Generator
 
-Der Unifi Meshviewer Generator verbindet sich per API mit dem Unifi Controller (z.B. dem Cloudkey) und ermittelt alle AccessPoints. Aus den Daten wird eine meshviewer.json und eine nodelist.json erzeugt. Diese können anschließend im Meshviewer und der Nodelist zusätzlich eingebunden werden. Somit sind auch Unifi AccessPoints die mit der Stock Firmware an einem Unifi Controller betrieben werden, zukünftig auf der Freifunk Map zu sehen. Dieses Projekt basiert auf der Idee von [Freifunk-Greifswald/UniFi.php](https://github.com/Freifunk-Greifswald/UniFi.php), vielen Dank für den Ansatz.
+Diese Version ist eine Erweiterung des UniFi Meshviewer Generator von [Freifunk Nordheide/Strausmann](https://github.com/strausmann/unifi-meshviewer-generator). Sie erlaubt alternativ die Ausgabe der benötigten Dateien zur nutzung in [HopGlass](https://github.com/hopglass/hopglass).
 
-The GitHub repository is only a mirror of our [GitLab](https://git.isp-serverfarm.de/freifunk-nordheide/unifi-meshviewer-generator)
+Der Unifi Meshviewer/HopGlass Generator verbindet sich per API mit dem Unifi Controller (z.B. dem Cloudkey) und ermittelt alle AccessPoints. Aus den Daten wird eine meshviewer.json bzw. für HopGlass eine nodes.json und graph.json sowie eine nodelist.json erzeugt. Diese können anschließend im Meshviewer/HopGlass und der Nodelist zusätzlich eingebunden werden. Somit sind auch Unifi AccessPoints die mit der Stock Firmware an einem Unifi Controller betrieben werden, zukünftig auf der Freifunk Map zu sehen. Dieses Projekt basiert auf der Idee von [Freifunk-Greifswald/UniFi.php](https://github.com/Freifunk-Greifswald/UniFi.php), vielen Dank für den Ansatz.
 
 ## Requirements
 
@@ -20,7 +20,7 @@ You can use [Git](#git) or simply [Download the Release](#download-the-release) 
 The preferred method is via `git` command from the shell in your project directory:
 
 ```sh
-git clone https://git.isp-serverfarm.de/freifunk-nordheide/unifi-meshviewer-generator.git .
+git clone https://github.com/Quedel/unifi-meshviewer-generator.git .
 ```
 
 * When git is done cloning, execute Composer with the following command:
@@ -31,7 +31,7 @@ composer install
 
 ### Download the Release
 
-If you prefer not to use git, you can simply [download the package](https://git.isp-serverfarm.de/freifunk-nordheide/unifi-meshviewer-generator/-/releases), uncompress the zip file.
+If you prefer not to use git, you can simply [download the package](https://github.com/Quedel/unifi-meshviewer-generator/archive/master.zip), uncompress the zip file.
 
 ## Configuration
 
@@ -42,6 +42,7 @@ If you prefer not to use git, you can simply [download the package](https://git.
 |---------------|----------------------------------------------------|-----------------------------|----------|
 | DEBUG         | Enable Disable the Debug Mode                      | TRUE/FALSE                  | X        |
 | TIMEZONE      | Set the Timezone                                   | Europe/Berlin               | X        |
+| VIEWER        | Set the Viewer (not/wrong set->meshviewer)         | hopglass/meshviewer         | X        |
 | OWNER_EMAIL   | Set the Node Owner Email or Phonenumber            | user@emaildomain.net        | X        |
 | UNIFI_USER    | Set the Unifi Controller User Name                 | UnifiStatUser               | X        |
 | UNIFI_PASS    | Set the Unifi Controller Password                  | P@ssw0rd#1234               | X        |
@@ -66,6 +67,7 @@ This class is based on the initial work by the following developers:
 - fbagnol: https://github.com/fbagnol/class.unifi.php
 - Art-of-Wifi: https://github.com/Art-of-WiFi/UniFi-API-client
 - Freifunk-Greifswald: https://github.com/Freifunk-Greifswald/UniFi.php
+- strausmann: https://github.com/strausmann/unifi-meshviewer-generator
 
 and the API as published by Ubiquiti:
 
