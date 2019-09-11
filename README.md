@@ -1,6 +1,6 @@
 ## UniFi Meshviewer/HopGlass Generator
 
-Diese Version ist eine Erweiterung des UniFi Meshviewer Generator von [Freifunk Nordheide/Strausmann](https://github.com/strausmann/unifi-meshviewer-generator). Sie erlaubt alternativ die Ausgabe der benötigten Dateien zur nutzung in [HopGlass](https://github.com/hopglass/hopglass).
+Diese Version ist eine Erweiterung des UniFi Meshviewer Generator von [Freifunk Nordheide/Strausmann](https://github.com/strausmann/unifi-meshviewer-generator). Sie erlaubt alternativ die Ausgabe der benötigten Dateien zur Nutzung in [HopGlass](https://github.com/hopglass/hopglass).
 
 Der Unifi Meshviewer/HopGlass Generator verbindet sich per API mit dem Unifi Controller (z.B. dem Cloudkey) und ermittelt alle AccessPoints. Aus den Daten wird eine meshviewer.json bzw. für HopGlass eine nodes.json und graph.json sowie eine nodelist.json erzeugt. Diese können anschließend im Meshviewer/HopGlass und der Nodelist zusätzlich eingebunden werden. Somit sind auch Unifi AccessPoints die mit der Stock Firmware an einem Unifi Controller betrieben werden, zukünftig auf der Freifunk Map zu sehen. Dieses Projekt basiert auf der Idee von [Freifunk-Greifswald/UniFi.php](https://github.com/Freifunk-Greifswald/UniFi.php), vielen Dank für den Ansatz.
 

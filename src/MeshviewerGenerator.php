@@ -466,9 +466,9 @@ class MeshviewerGenerator{
         $return_nodeList = $this->outputHopglassList();
         $respone = file_put_contents('data/nodes.json', $return_nodeList);
         if ($respone){
-            $this->writeStatus['hopglass'] = true;
+            $this->writeStatus['nodes'] = true;
         } else {
-            $this->writeStatus['hopglass'] = false;
+            $this->writeStatus['nodes'] = false;
         }
     }
 
