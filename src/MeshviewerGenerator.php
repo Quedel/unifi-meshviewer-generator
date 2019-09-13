@@ -310,11 +310,7 @@ class MeshviewerGenerator{
 
             if ($device->state == 1){
                 $stats = $device->stat;
-                $radio_stats = (array) $device->radio_table_stats;
-                $radio_stat0 = $radio_stats[0];
-                $radio_stat1 = $radio_stats[1];
-
-
+                
                 $node['flags']['online']                            = true;
                 $node['firstseen']                                  = $ap_metadata['first_seen'];
                 $node['lastseen']                                   = date(DATE_ISO8601, $device->last_seen);
