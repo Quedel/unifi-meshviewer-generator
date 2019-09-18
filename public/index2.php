@@ -23,7 +23,7 @@ if(file_exists("../unifi.json")){
 
     foreach ($unifi['controller'] as $env) {
 
-        if(file_exists('.env.'.$env)) {
+        if(file_exists('../.env.'.$env)) {
 
             // load dotenv and the .env file.
             $dotenv = Dotenv::create(dirname(dirname(__FILE__)), '.env.'.$env);
