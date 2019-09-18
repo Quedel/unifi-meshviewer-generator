@@ -6,3 +6,4 @@ cache/*.json
 devices/*.json
 public/data/*.json
 publict
+json-examples
