@@ -16,9 +16,6 @@ if (class_exists("\Whoops\Run")){
 // set Content Type to application/json
 header('Content-Type: application/json');
 
-// set TimeZone
-date_default_timezone_set(getenv('TIMEZONE'));
-
 if(file_exists("../unifi.json")){
     $unifi =  json_decode(file_get_contents("../unifi.json"),true);
 
@@ -32,6 +29,8 @@ if(file_exists("../unifi.json")){
             $dotenv = Dotenv::create(dirname(dirname(__FILE__)), '.env.'.$env);
             $dotenv->load(true);
 
+            // set TimeZone
+            date_default_timezone_set(getenv('TIMEZONE'));
 
             // Initiate the MeshviewerGenerator
             $meshGenerator = new MeshviewerGenerator();
@@ -60,6 +59,8 @@ else {
     $dotenv = Dotenv::create(dirname(dirname(__FILE__)));
     $dotenv->load(true);
 
+    // set TimeZone
+    date_default_timezone_set(getenv('TIMEZONE'));    
 
     // Initiate the MeshviewerGenerator
     $meshGenerator = new MeshviewerGenerator();
