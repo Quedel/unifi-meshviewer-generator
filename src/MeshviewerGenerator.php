@@ -502,7 +502,7 @@ class MeshviewerGenerator{
             $deviceData['mac'] = $device->mac;
             $deviceData['ip'] = $device->ip;
             $deviceData['first_seen'] = date(DATE_ISO8601);
-            $deviceData['last_seen'] = isset($device->last_seen) ? date(DATE_ISO8601,$device->last_seen) : date(DATE_ISO8601,time(2019-01-01));
+            $deviceData['last_seen'] = isset($device->last_seen) ? date(DATE_ISO8601,$device->last_seen) : date(DATE_ISO8601,mktime(0,0,0,1,1,2019));
             $deviceData['uptime'] = isset($device->uptime) ? date(DATE_ISO8601,time()-$device->uptime) : date(DATE_ISO8601,time()-1);
             $deviceData['owner'] = getenv('OWNER_EMAIL');
         }

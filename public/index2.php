@@ -27,7 +27,7 @@ if(file_exists("../unifi.json")){
 
             // load dotenv and the .env file.
             $dotenv = Dotenv::create(dirname(dirname(__FILE__)), '.env.'.$env);
-            $dotenv->load(true);
+            $dotenv->overload(true);
 
             // set TimeZone
             date_default_timezone_set(getenv('TIMEZONE'));
@@ -40,10 +40,10 @@ if(file_exists("../unifi.json")){
             if(file_exists("data/nodelist.json")) {
                 
                 if(!is_dir("data/$env/")) mkdir("data/$env/", 0700);
-                if(file_exists("data/nodes.json")) copy("data/nodes.json", "data/$env/nodes.json");
-                if(file_exists("data/graph.json")) copy("data/graph.json", "data/$env/graph.json");
-                if(file_exists("data/nodelist.json")) copy("data/nodelist.json", "data/$env/nodelist.json");
-                if(file_exists("data/meshviewer.json")) copy("data/meshviewer.json", "data/$env/meshviewer.json");
+                if(file_exists("data/nodes.json")) rename("data/nodes.json", "data/$env/nodes.json");
+                if(file_exists("data/graph.json")) rename("data/graph.json", "data/$env/graph.json");
+                if(file_exists("data/nodelist.json")) rename("data/nodelist.json", "data/$env/nodelist.json");
+                if(file_exists("data/meshviewer.json")) rename("data/meshviewer.json", "data/$env/meshviewer.json");
 
             }
             
