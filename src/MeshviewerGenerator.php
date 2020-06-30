@@ -215,14 +215,14 @@ class MeshviewerGenerator{
                 $stats = $device->stat;
                 $radio_stats = (array) $device->radio_table_stats;
                 $radio_stat0 = $radio_stats[0];
-                $radio_stat1 = $radio_stats[1];
+                $radio_stat1 = isset($radio_stats[1])?$radio_stats[1]:false;
                 $node['firstseen'] = $ap_metadata['first_seen'];
                 $node['lastseen'] = date(DATE_ISO8601, $device->last_seen);
                 $node['is_online'] = true;
                 $node['is_gateway'] = false;
                 $node['clients'] = $device->num_sta;
                 $node['clients_wifi24'] = $radio_stat0->num_sta;
-                $node['clients_wifi5'] = $radio_stat1->num_sta;
+                $node['clients_wifi5'] = $radio_stat1==false?0:$radio_stat1->num_sta;
                 $node['clients_other'] = 0;
 
                 $stats = $device->sys_stats;
